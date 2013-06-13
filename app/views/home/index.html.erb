@@ -58,4 +58,6 @@
   </tbody>
 </table>
 
-<%= link_to "Sign In", new_user_session_path %>
+<% unless current_user %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>

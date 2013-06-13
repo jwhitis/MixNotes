@@ -6,7 +6,7 @@ $(document).ready(function(){
         oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
       });
     },
-    swfPath: "../../../vendor/plugins/jplayer",
+    swfPath: "../../../vendor/assets",
     supplied: "m4a, oga"
   });
 });
