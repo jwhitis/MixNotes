@@ -3,11 +3,20 @@ header {
   padding: 20px 0 10px 0;
   border-bottom: 1px solid #777;
 }
-a#logo {
+a#brand {
   font-size: 42px;
 }
-a#logo:hover {
+a#brand:hover {
   text-decoration: none;
+}
+h1#logo {
+  margin: 100px 0 20px 0;
+  text-align: center;
+  font-family: serif;
+  font-size: 70px;
+}
+p.devise-alert {
+  text-align: center;
 }
 div#jp_container_1 {
   width: 100%;

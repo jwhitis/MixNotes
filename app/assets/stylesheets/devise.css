@@ -1,6 +1,8 @@
 div.devise-wrapper {
-  margin-top: 100px;
   text-align: center;
+}
+div.devise-wrapper > h2 {
+  margin-top: 0;
 }
 input#user_remember_me {
   margin: 0 5px 5px 0;
