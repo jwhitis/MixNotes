@@ -1,3 +1,18 @@
-h1 {
-  color: orange;
+header {
+  margin-bottom: 20px;
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid #777;
+}
+a#logo {
+  font-size: 42px;
+}
+a#logo:hover {
+  text-decoration: none;
+}
+div#jp_container_1 {
+  width: 100%;
+}
+div.jp-gui {
+  width: 420px;
+  margin: 0 auto;
 }

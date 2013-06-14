@@ -7,10 +7,6 @@ When(/^I go to the homepage$/) do
   visit "/"
 end
 
-When(/^I click "(.*?)"$/) do |text|
-  click_link text
-end
-
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
   fill_in field, with: value
 end

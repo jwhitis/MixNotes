@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>MixNotes</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A platform for sharing mix notes." />
+  <meta http-equiv="author" content="Jack Whitis" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+<div class="container">
+
+<% if user_signed_in? %>
+<header>
+  <%= link_to "MixNotes", root_path, :id => "logo" %>
+  <ul class="nav pull-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%= current_user.email %>
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </li>
+  </ul>
+</header>
+<% end %>
+
+<% unless notice.blank? %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+<% unless alert.blank? %>
+  <p class="alert"><%= alert %></p>
+<% end %>
+
+<div class="row">
+  <%= yield %>
+</div>
+
+</div>
 
 </body>
 </html>
