@@ -1,0 +1,45 @@
+<div class="span8 offset2">
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Owner</th>
+      <th></th<
+    </tr>
+  </thead>
+  <tbody>
+    <% @mixes.each do |mix| %>
+    <tr>
+      <td><%= link_to mix.title, mix %></td>
+      <td><%= mix.artist %></td>
+      <td><%= mix.user.email %></td>
+      <td><%= link_to "Delete", mix, :method => :delete, :class => "btn btn-mini btn-danger", :role => "button" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="#new-mix" role="button" class="btn" data-toggle="modal">Add Mix</a>
+
+<div id="new-mix" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="new-mix-label" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="new-mix-label">Upload a new mix</h3>
+  </div>
+  <%= form_for @mix do |f| %>
+    <div class="modal-body">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :artist %>
+      <%= f.text_field :artist %>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <%= f.submit "Upload", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+</div>

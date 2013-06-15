@@ -1,6 +1,7 @@
 MixNotes::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "mixes#index"
   devise_for :users
+  resources :mixes, :only => [:index, :create, :show, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
