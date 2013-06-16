@@ -1,13 +1,48 @@
-<div class="span8 offset2">
+<div class="span2">
+
+<a href="#new-mix-modal" data-toggle="modal">Upload a mix</a>
+
+<!-- New Mix Modal -->
+<div id="new-mix-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="new-mix-modal-label" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="new-mix-modal-label">Upload a mix</h3>
+  </div>
+  <%= form_for @mix, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="modal-body">
+      <div class="control-group">
+        <%= f.label :title, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :title, :placeholder => "Title" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :artist, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :artist, :placeholder => "Artist" %>
+        </div>
+      </div>
+      <%= f.hidden_field :owner, :value => current_user.email %>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+</div>
+<div class="span8">
 
 <!-- Mixes Table -->
-<table class="table table-bordered table-striped">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
       <th>Artist</th>
       <th>Owner</th>
-      <th></th<
+      <th>Collaborators</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,37 +51,15 @@
       <td><%= link_to mix.title, mix %></td>
       <td><%= mix.artist %></td>
       <td><%= mix.owner %></td>
+      <td><%= mix.users.count %></td>
       <td>
         <% if current_user.email == mix.owner %>
-          <%= link_to "Delete", mix, :method => :delete, :class => "btn btn-mini btn-danger", :role => "button" %>
+          <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure?" %>
         <% end %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
-<a href="#new-mix-modal" role="button" class="btn" data-toggle="modal">Add Mix</a>
-
-<!-- New Mix Modal -->
-<div id="new-mix-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="new-mix-modal-label" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3 id="new-mix-modal-label">Upload a new mix</h3>
-  </div>
-  <%= form_for @mix do |f| %>
-    <div class="modal-body">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-      <%= f.label :artist %>
-      <%= f.text_field :artist %>
-      <%= f.hidden_field :owner, :value => current_user.email %>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-      <%= f.submit "Upload", :class => "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
 
 </div>

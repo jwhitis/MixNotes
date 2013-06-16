@@ -18,16 +18,19 @@ h1#logo {
 p.devise-alert {
   text-align: center;
 }
+p#owner {
+  margin-left: 25px;
+}
+ul#user-list {
+  list-style-type: none;
+}
+form#new_mix, div#add-user-modal > form {
+  margin-bottom: 0;
+}
 div#jp_container_1 {
   width: 100%;
 }
 div.jp-gui {
   width: 420px;
   margin: 0 auto;
-}
-form#new_mix {
-  margin-bottom: 0;
-}
-div#add-user-modal > form {
-  margin-bottom: 0;
 }
