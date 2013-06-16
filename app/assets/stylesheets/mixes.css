@@ -1,30 +1,10 @@
-header {
-  margin-bottom: 20px;
-  padding: 20px 0 10px 0;
-  border-bottom: 1px solid #777;
-}
-a#brand {
-  font-size: 42px;
-}
-a#brand:hover {
-  text-decoration: none;
-}
-h1#logo {
-  margin: 100px 0 20px 0;
-  text-align: center;
-  font-family: serif;
-  font-size: 70px;
-}
-p.devise-alert {
-  text-align: center;
-}
 p#owner {
   margin-left: 25px;
 }
 ul#user-list {
   list-style-type: none;
 }
-form#new_mix, div#add-user-modal > form {
+div#add-user-modal > form {
   margin-bottom: 0;
 }
 div#jp_container_1 {
@@ -37,12 +17,23 @@ div.jp-gui {
 table#comments-table {
   margin: 20px 0 0 0;
 }
-form#new_topic {
-  text-align: center;
+th#time-heading {
+  width: 44px;
+  text-align: right;
 }
-label[for="topic_content"] {
-  font-weight: bold;
+th#user-heading {
+  width: 159px;
+}
+td.time {
+  text-align: right;
+  color: #08c;
+}
+td.time:hover {
+  text-decoration: underline;
+  color: #005580;
+  cursor: pointer;
 }
 input#topic_content {
-  width: 420px;
+  margin-left: 60px;
+  width: 521px;
 }

@@ -85,15 +85,15 @@
 <table id="comments-table" class="table table-striped">
   <thead>
     <tr>
-      <th>Time</th>
-      <th>Comment</th>
-      <th>User</th>
+      <th id="time-heading">Time</th>
+      <th id="comment-heading">Comment</th>
+      <th id="user-heading">User</th>
     </tr>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= topic.time %></td>
+        <td class="time" data-time="<%= topic.time %>"><%= topic.convert_time(topic.time) %></td>
         <td><%= topic.content %></td>
         <td><%= topic.user.email %></td>
       </tr>
@@ -102,8 +102,7 @@
 </table>
 
 <%= form_for [@mix, @topic], :html => {:class => "form-inline"} do |f| %>
-  <%= f.hidden_field :time, :value => 60 %>
-  <%= f.label :content, "What's on your mind?" %>
+  <%= f.hidden_field :time %>
   <%= f.text_field :content, :placeholder => "Add a comment..." %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.submit "Submit", :class => "btn btn-primary" %>
