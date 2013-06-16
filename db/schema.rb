@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615155733) do
+ActiveRecord::Schema.define(:version => 20130616044154) do
 
   create_table "mixes", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20130615155733) do
   end
 
   add_index "mixes_users", ["mix_id", "user_id"], :name => "index_mixes_users_on_mix_id_and_user_id"
+
+  create_table "topics", :force => true do |t|
+    t.integer  "time"
+    t.text     "content"
+    t.integer  "mix_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

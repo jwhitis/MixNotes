@@ -23,6 +23,8 @@ class MixesController < ApplicationController
 
   def show
     @mix = Mix.find(params[:id])
+    @topics = @mix.topics
+    @topic = Topic.new
   end
 
   def destroy

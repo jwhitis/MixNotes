@@ -34,3 +34,15 @@ div.jp-gui {
   width: 420px;
   margin: 0 auto;
 }
+table#comments-table {
+  margin: 20px 0 0 0;
+}
+form#new_topic {
+  text-align: center;
+}
+label[for="topic_content"] {
+  font-weight: bold;
+}
+input#topic_content {
+  width: 420px;
+}

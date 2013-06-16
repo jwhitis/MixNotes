@@ -82,7 +82,7 @@
 </div>
 
 <!-- Comments Table -->
-<table class="table table-bordered table-striped">
+<table id="comments-table" class="table table-striped">
   <thead>
     <tr>
       <th>Time</th>
@@ -91,27 +91,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>0:59</td>
-      <td>Comments go here.</td>
-      <td>Jack</td>
-    </tr>
-    <tr>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-    </tr>
-    <tr>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-    </tr>
-    <tr>
-      <td>.</td>
-      <td>.</td>
-      <td>.</td>
-    </tr>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= topic.time %></td>
+        <td><%= topic.content %></td>
+        <td><%= topic.user.email %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
+
+<%= form_for [@mix, @topic], :html => {:class => "form-inline"} do |f| %>
+  <%= f.hidden_field :time, :value => 60 %>
+  <%= f.label :content, "What's on your mind?" %>
+  <%= f.text_field :content, :placeholder => "Add a comment..." %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit "Submit", :class => "btn btn-primary" %>
+<% end %>
 
 </div>
