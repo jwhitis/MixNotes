@@ -1,4 +1,38 @@
-<div class="span8 offset2">
+<div class="span2">
+
+<p>Owner: <%= @mix.owner %></p>
+<p>Collaborators:</p>
+<ul>
+  <% @mix.users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>
+
+<% if current_user.email == @mix.owner %>
+  <a href="#add-user-modal" role="button" class="btn" data-toggle="modal">Invite User</a>
+
+  <!-- Add User Modal -->
+  <div id="add-user-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="add-user-modal-label" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="add-user-modal-label">Invite a user to this mix</h3>
+    </div>
+    <%= form_tag :action => "add_user" do %>
+      <div class="modal-body">
+        <%= label_tag :email, "Email" %>
+        <%= text_field_tag :email %>
+        <%= hidden_field_tag :mix_id, @mix.id %>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= submit_tag "Invite", :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+</div>
+<div class="span8">
 
 <!-- jPlayer -->
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -42,7 +76,7 @@
   </div>
 </div>
 
-<!-- Comment Table -->
+<!-- Comments Table -->
 <table class="table table-bordered table-striped">
   <thead>
     <tr>

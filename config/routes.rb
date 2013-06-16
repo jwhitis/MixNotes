@@ -1,7 +1,9 @@
 MixNotes::Application.routes.draw do
   root :to => "mixes#index"
   devise_for :users
-  resources :mixes, :only => [:index, :create, :show, :destroy]
+  resources :mixes, :only => [:index, :create, :show, :destroy] do
+    post "add_user", :on => :member
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

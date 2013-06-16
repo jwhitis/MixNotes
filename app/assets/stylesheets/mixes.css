@@ -28,3 +28,6 @@ div.jp-gui {
 form#new_mix {
   margin-bottom: 0;
 }
+div#add-user-modal > form {
+  margin-bottom: 0;
+}
