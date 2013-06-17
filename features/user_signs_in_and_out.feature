@@ -1,4 +1,4 @@
-Feature: User can sign in and out
+Feature: User signs in and out
   In order to upload mixes
   As a user
   I want to sign in
