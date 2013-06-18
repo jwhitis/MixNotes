@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20130618032021) do
   create_table "mixes", :force => true do |t|
     t.string   "title"
     t.string   "artist"
-    t.string   "owner"
+    t.string   "admin"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

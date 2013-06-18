@@ -3,7 +3,7 @@ class CreateMixes < ActiveRecord::Migration
     create_table :mixes do |t|
       t.string :title
       t.string :artist
-      t.string :owner
+      t.string :admin
 
       t.timestamps
     end

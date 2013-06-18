@@ -1,24 +1,24 @@
 <div class="span2">
 
-<p><strong>Owner:</strong></p>
-<p id="owner"><%= @mix.owner %></p>
-<p><strong>Collaborators:</strong></p>
+<p><strong>Admin:</strong></p>
+<p id="admin"><%= @mix.admin %></p>
+<p><strong>Users:</strong></p>
 <ul id="user-list">
   <% @mix.users.each do |user| %>
-    <% unless user.email == @mix.owner %>
+    <% unless user.email == @mix.admin %>
       <li><%= user.email %></li>
     <% end %>
   <% end %>
 </ul>
 
-<% if current_user.email == @mix.owner %>
-  <a href="#add-user-modal" data-toggle="modal">Add a collaborator</a>
+<% if current_user.email == @mix.admin %>
+  <a href="#add-user-modal" data-toggle="modal">Add a user</a>
 
   <!-- Add User Modal -->
   <div id="add-user-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="add-user-modal-label" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3 id="add-user-modal-label">Add a collaborator</h3>
+      <h3 id="add-user-modal-label">Add a user</h3>
     </div>
     <%= form_tag({:action => "add_user"}, :class => "form-horizontal") do %>
       <div class="modal-body">
