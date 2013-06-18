@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20130618032021) do
 
+  create_table "comments", :force => true do |t|
+    t.integer  "time"
+    t.text     "content"
+    t.integer  "mix_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "mixes", :force => true do |t|
     t.string   "title"
     t.string   "artist"
@@ -30,16 +39,7 @@ ActiveRecord::Schema.define(:version => 20130618032021) do
 
   create_table "replies", :force => true do |t|
     t.text     "content"
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "topics", :force => true do |t|
-    t.integer  "time"
-    t.text     "content"
-    t.integer  "mix_id"
+    t.integer  "comment_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

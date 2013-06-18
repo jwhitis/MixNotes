@@ -95,22 +95,22 @@
     </tr>
   </thead>
   <tbody>
-    <% @mix.topics.each do |topic| %>
-      <tr class="topic-row">
-        <td class="time" data-time="<%= topic.time %>"><%= topic.convert_time(topic.time) %></td>
-        <td><%= topic.content %></td>
-        <td><%= topic.user.email %></td>
+    <% @mix.comments.each do |comment| %>
+      <tr class="comment-row">
+        <td class="time" data-time="<%= comment.time %>"><%= comment.convert_time(comment.time) %></td>
+        <td><%= comment.content %></td>
+        <td><%= comment.user.email %></td>
       </tr>
-      <% topic.replies.each do |reply| %>
-        <tr class="comment-row">
+      <% comment.replies.each do |reply| %>
+        <tr class="reply-row">
           <td class="arrow">---></td>
           <td><%= reply.content %></td>
           <td><%= reply.user.email %></td>
         </tr>
       <% end %>
-      <tr class="comment-row">
+      <tr class="reply-row">
         <td colspan="3">
-          <%= form_for [@mix, topic, @reply], :html => {:class => "form-inline"} do |f| %>
+          <%= form_for [@mix, comment, @reply], :html => {:class => "form-inline"} do |f| %>
             <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.submit "Submit", :class => "btn btn-primary" %>
@@ -121,7 +121,7 @@
   </tbody>
 </table>
 
-<%= form_for [@mix, @topic], :html => {:class => "form-inline"} do |f| %>
+<%= form_for [@mix, @comment], :html => {:class => "form-inline"} do |f| %>
   <%= f.hidden_field :time %>
   <%= f.text_field :content, :placeholder => "Add a comment..." %>
   <%= f.hidden_field :user_id, :value => current_user.id %>

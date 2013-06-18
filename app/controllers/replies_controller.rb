@@ -1,9 +1,9 @@
 class RepliesController < ApplicationController
 
   def create
-    topic = Topic.find(params[:topic_id])
-    topic.replies.create(params[:reply])
-    redirect_to mix_path(topic.mix_id)
+    comment = Comment.find(params[:comment_id])
+    comment.replies.create(params[:reply])
+    redirect_to mix_path(comment.mix_id)
   end
 
 end

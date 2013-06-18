@@ -23,7 +23,7 @@ class MixesController < ApplicationController
 
   def show
     @mix = Mix.find(params[:id])
-    @topic = Topic.new
+    @comment = Comment.new
     @reply = Reply.new
   end
 

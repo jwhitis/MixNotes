@@ -12,7 +12,7 @@ $(document).ready(function(){
     timeupdate: function() {
       $(this).on($.jPlayer.event.timeupdate, function(event) {
         var time = Math.round(event.jPlayer.status.currentTime);
-        $("#topic_time").val(time);
+        $("#comment_time").val(time);
       });
     }
   });
@@ -22,9 +22,9 @@ $(document).ready(function(){
     $("#jquery_jplayer_1").jPlayer("play", time);
   });
 
-  $(".comment-row").hide();
-  $(".topic-row").click(function() {
-    $(this).nextUntil(".topic-row").toggle("fast");
+  $(".reply-row").hide();
+  $(".comment-row").click(function() {
+    $(this).nextUntil(".comment-row").toggle("fast");
   });
 
 });
