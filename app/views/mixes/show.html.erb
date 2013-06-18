@@ -5,7 +5,9 @@
 <p><strong>Collaborators:</strong></p>
 <ul id="user-list">
   <% @mix.users.each do |user| %>
-    <li><%= user.email %></li>
+    <% unless user.email == @mix.owner %>
+      <li><%= user.email %></li>
+    <% end %>
   <% end %>
 </ul>
 
@@ -80,6 +82,8 @@
     </div>
   </div>
 </div>
+
+<p id="instructions" class="muted"><em>Just pause the song at any point, and add a comment below.</em></p>
 
 <!-- Comments Table -->
 <table id="comments-table" class="table table-striped">
