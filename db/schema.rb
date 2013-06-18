@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130618032021) do
 
-  create_table "comments", :force => true do |t|
-    t.text     "content"
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "mixes", :force => true do |t|
     t.string   "title"
     t.string   "artist"
@@ -35,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20130618032021) do
   end
 
   add_index "mixes_users", ["mix_id", "user_id"], :name => "index_mixes_users_on_mix_id_and_user_id"
+
+  create_table "replies", :force => true do |t|
+    t.text     "content"
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "topics", :force => true do |t|
     t.integer  "time"

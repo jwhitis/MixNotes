@@ -2,7 +2,7 @@ class Topic < ActiveRecord::Base
   attr_accessible :content, :mix_id, :time, :user_id
   belongs_to :mix, :dependent => :destroy
   belongs_to :user
-  has_many :comments
+  has_many :replies
 
   def convert_time time
     min = (time / 60).floor

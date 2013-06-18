@@ -3,7 +3,7 @@ MixNotes::Application.routes.draw do
   devise_for :users
   resources :mixes, :only => [:index, :create, :show, :destroy] do
     resources :topics, :only => :create do
-      resources :comments, :only => :create
+      resources :replies, :only => :create
     end
     post "add_user", :on => :member
   end

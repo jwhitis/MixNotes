@@ -101,16 +101,16 @@
         <td><%= topic.content %></td>
         <td><%= topic.user.email %></td>
       </tr>
-      <% topic.comments.each do |comment| %>
+      <% topic.replies.each do |reply| %>
         <tr class="comment-row">
           <td class="arrow">---></td>
-          <td><%= comment.content %></td>
-          <td><%= comment.user.email %></td>
+          <td><%= reply.content %></td>
+          <td><%= reply.user.email %></td>
         </tr>
       <% end %>
       <tr class="comment-row">
         <td colspan="3">
-          <%= form_for [@mix, topic, @comment], :html => {:class => "form-inline"} do |f| %>
+          <%= form_for [@mix, topic, @reply], :html => {:class => "form-inline"} do |f| %>
             <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.submit "Submit", :class => "btn btn-primary" %>
