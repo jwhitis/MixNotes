@@ -4,7 +4,7 @@ p#owner {
 ul#user-list {
   list-style-type: none;
 }
-div#add-user-modal > form {
+div#add-user-modal > form, form#new_comment {
   margin-bottom: 0;
 }
 div#jp_container_1 {
@@ -37,7 +37,14 @@ td.time:hover {
   color: #005580;
   cursor: pointer;
 }
-input#topic_content {
+td.arrow {
+  text-align: right;
+}
+input#comment_content {
   margin-left: 60px;
+  width: 521px;
+}
+input#topic_content {
+  margin-left: 68px;
   width: 521px;
 }

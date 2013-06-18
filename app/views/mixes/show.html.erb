@@ -86,7 +86,7 @@
 <p id="instructions" class="muted"><em>Just pause the song at any point, and add a comment below.</em></p>
 
 <!-- Comments Table -->
-<table id="comments-table" class="table table-striped">
+<table id="comments-table" class="table table-hover">
   <thead>
     <tr>
       <th id="time-heading">Time</th>
@@ -95,11 +95,27 @@
     </tr>
   </thead>
   <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
+    <% @mix.topics.each do |topic| %>
+      <tr class="topic-row">
         <td class="time" data-time="<%= topic.time %>"><%= topic.convert_time(topic.time) %></td>
         <td><%= topic.content %></td>
         <td><%= topic.user.email %></td>
+      </tr>
+      <% topic.comments.each do |comment| %>
+        <tr class="comment-row">
+          <td class="arrow">---></td>
+          <td><%= comment.content %></td>
+          <td><%= comment.user.email %></td>
+        </tr>
+      <% end %>
+      <tr class="comment-row">
+        <td colspan="3">
+          <%= form_for [@mix, topic, @comment], :html => {:class => "form-inline"} do |f| %>
+            <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.submit "Submit", :class => "btn btn-primary" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

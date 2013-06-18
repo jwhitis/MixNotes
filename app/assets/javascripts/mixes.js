@@ -22,4 +22,9 @@ $(document).ready(function(){
     $("#jquery_jplayer_1").jPlayer("play", time);
   });
 
+  $(".comment-row").hide();
+  $(".topic-row").click(function() {
+    $(this).nextUntil(".topic-row").toggle("fast");
+  });
+
 });

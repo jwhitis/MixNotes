@@ -35,7 +35,7 @@
 <div class="span8">
 
 <!-- Mixes Table -->
-<table id="mixes-table" class="table table-striped">
+<table id="mixes-table" class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -51,7 +51,7 @@
       <td><%= link_to mix.title, mix %></td>
       <td><%= mix.artist %></td>
       <td><%= mix.owner %></td>
-      <td><%= mix.users.count %></td>
+      <td><%= mix.users.count - 1 %></td>
       <td>
         <% if current_user.email == mix.owner %>
           <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure?" %>
