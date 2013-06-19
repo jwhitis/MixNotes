@@ -5,8 +5,8 @@ MixNotes::Application.routes.draw do
     resources :comments, :only => :create do
       resources :replies, :only => :create
     end
-    post "add_user", :on => :member
   end
+  resources :permissions, :only => :create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

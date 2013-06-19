@@ -20,7 +20,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h3 id="add-user-modal-label">Add a user</h3>
     </div>
-    <%= form_tag({:action => "add_user"}, :class => "form-horizontal") do %>
+    <%= form_tag({:controller => "permissions", :action => :create}, :class => "form-horizontal") do %>
       <div class="modal-body">
         <div class="control-group">
           <%= label_tag :email, "Email", :class => "control-label" %>
