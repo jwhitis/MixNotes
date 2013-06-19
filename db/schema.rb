@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618032021) do
+ActiveRecord::Schema.define(:version => 20130618223823) do
 
   create_table "comments", :force => true do |t|
     t.integer  "time"
@@ -30,12 +30,14 @@ ActiveRecord::Schema.define(:version => 20130618032021) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "mixes_users", :id => false, :force => true do |t|
-    t.integer "mix_id"
-    t.integer "user_id"
+  create_table "permissions", :force => true do |t|
+    t.integer  "mix_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "mixes_users", ["mix_id", "user_id"], :name => "index_mixes_users_on_mix_id_and_user_id"
+  add_index "permissions", ["mix_id", "user_id"], :name => "index_permissions_on_mix_id_and_user_id"
 
   create_table "replies", :force => true do |t|
     t.text     "content"
