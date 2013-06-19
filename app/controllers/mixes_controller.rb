@@ -16,6 +16,7 @@ class MixesController < ApplicationController
 
   def show
     @mix = Mix.find(params[:id])
+    @permission = Permission.new
     @comment = Comment.new
     @reply = Reply.new
   end
