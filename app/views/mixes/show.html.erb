@@ -83,33 +83,39 @@
   </div>
 </div>
 
-<p id="instructions" class="muted"><em>Just pause the song at any point, and add a comment below.</em></p>
+<p id="instructions" class="muted">
+  <em>Just pause the song at any point, and add a comment below.</em>
+</p>
 
 <!-- Comments Table -->
 <table id="comments-table" class="table table-hover">
   <thead>
     <tr>
       <th id="time-heading">Time</th>
-      <th id="comment-heading">Comment</th>
+      <th>Comment</th>
+      <th id="replies-heading">Replies</th>
       <th id="user-heading">User</th>
     </tr>
   </thead>
   <tbody>
     <% @mix.comments.each do |comment| %>
       <tr class="comment-row">
-        <td class="time" data-time="<%= comment.time %>"><%= comment.convert_time(comment.time) %></td>
+        <td class="time" data-time="<%= comment.time %>">
+          <%= comment.convert_time %>
+        </td>
         <td><%= comment.content %></td>
+        <td class="replies"><%= comment.replies.count %></td>
         <td><%= comment.user.email %></td>
       </tr>
       <% comment.replies.each do |reply| %>
         <tr class="reply-row">
           <td class="arrow">---></td>
-          <td><%= reply.content %></td>
+          <td colspan="2"><%= reply.content %></td>
           <td><%= reply.user.email %></td>
         </tr>
       <% end %>
       <tr class="reply-row">
-        <td colspan="3">
+        <td colspan="4">
           <%= form_for [@mix, comment, @reply], :html => {:class => "form-inline"} do |f| %>
             <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
             <%= f.hidden_field :user_id, :value => current_user.id %>

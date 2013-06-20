@@ -1,3 +1,13 @@
 form#new_mix {
   margin-bottom: 0;
 }
+th#comments-heading, th#users-heading, td.comments, td.users {
+  width: 74px;
+  text-align: center;
+}
+th#admin-heading {
+  width: 159px;
+}
+th#delete-heading {
+  width: 41px;
+}

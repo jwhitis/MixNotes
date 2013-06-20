@@ -21,9 +21,13 @@ p#instructions {
 table#comments-table {
   margin: 0;
 }
-th#time-heading {
+th#time-heading, td.arrow {
   width: 44px;
   text-align: right;
+}
+th#replies-heading, td.replies {
+ width: 51px;
+ text-align: center;
 }
 th#user-heading {
   width: 159px;
@@ -36,9 +40,6 @@ td.time:hover {
   text-decoration: underline;
   color: #005580;
   cursor: pointer;
-}
-td.arrow {
-  text-align: right;
 }
 input#reply_content {
   margin-left: 60px;

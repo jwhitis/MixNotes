@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :replies
 
-  def convert_time time
+  def convert_time
     min = (time / 60).floor
     sec = "%02d" % (time % 60)
     "#{min}:#{sec}"
