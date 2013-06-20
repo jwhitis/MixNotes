@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
   has_many :mixes, :through => :permissions
   has_many :comments
   has_many :replies
+
+  def self.find_by_email email
+    where(:email => email).first
+  end
+
 end
