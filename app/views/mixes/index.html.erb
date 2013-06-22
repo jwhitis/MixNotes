@@ -22,6 +22,14 @@
           <%= f.text_field :artist, :placeholder => "Artist" %>
         </div>
       </div>
+      <div class="control-group">
+        <%= f.label :audio, "File", :class => "control-label" %>
+        <div id="upload-box" class="controls">
+          <%= f.file_field :audio %>
+          <div id="upload-button" class="btn btn-small btn-inverse">Choose a file</div>
+          <span id="upload-text"></span>
+        </div>
+      </div>
       <%= f.hidden_field :admin, :value => current_user.email %>
     </div>
     <div class="modal-footer">

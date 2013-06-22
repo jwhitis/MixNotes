@@ -1,14 +1,18 @@
 $(document).ready(function(){
 
+  $("#mix_audio").change(function() {
+    var filename = $(this).val().split("\\");
+    $("#upload-text").text(filename[filename.length - 1]);
+  });
+
   $("#jquery_jplayer_1").jPlayer({
     ready: function () {
       $(this).jPlayer("setMedia", {
-        m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-        oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+        mp3: $(this).attr("data-url")
       });
     },
     swfPath: "../../../vendor/assets",
-    supplied: "m4a, oga",
+    supplied: "mp3",
     timeupdate: function() {
       $(this).on($.jPlayer.event.timeupdate, function(event) {
         var time = Math.round(event.jPlayer.status.currentTime);

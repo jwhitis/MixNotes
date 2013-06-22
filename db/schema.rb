@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618223823) do
+ActiveRecord::Schema.define(:version => 20130620202214) do
 
   create_table "comments", :force => true do |t|
     t.integer  "time"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130618223823) do
     t.string   "admin"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "audio"
   end
 
   create_table "permissions", :force => true do |t|

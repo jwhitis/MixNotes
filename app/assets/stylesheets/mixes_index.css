@@ -1,6 +1,17 @@
 form#new_mix {
   margin-bottom: 0;
 }
+div#upload-box {
+  position: relative;
+}
+input#mix_audio {
+  position: absolute;
+  z-index: 9999;
+  opacity: 0;
+}
+span#upload-text {
+  padding-left: 5px;
+}
 th#comments-heading, th#users-heading, td.comments, td.users {
   width: 74px;
   text-align: center;

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
 gem 'devise'
+gem 'fog', '~> 1.3.1'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.13'

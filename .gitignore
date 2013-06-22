@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore AWS credentials
+/config/initializers/aws_credentials.rb
