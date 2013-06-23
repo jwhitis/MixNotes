@@ -52,7 +52,7 @@
       <th id="comments-heading">Comments</th>
       <th id="users-heading">Users</th>
       <th id="admin-heading">Admin</th>
-      <th id="delete-mix-heading">Edit</th>
+      <th id="edit-mix-heading">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -65,7 +65,9 @@
       <td><%= mix.admin %></td>
       <td>
         <% if current_user.email == mix.admin %>
-          <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure you want to delete this mix?", :class => "delete-mix" %>
+          <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure you want to delete this mix?", :class => "edit-mix" %>
+        <% else %>
+          <%= link_to "Leave", mix.permissions.find_by_user(current_user), :method => :delete, :confirm => "Are you sure you want to leave this mix?", :class => "edit-mix" %>
         <% end %>
       </td>
     </tr>

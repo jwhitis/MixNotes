@@ -19,4 +19,10 @@ class PermissionsController < ApplicationController
     end
   end
 
+  def destroy
+    permission = Permission.find(params[:id])
+    permission.destroy
+    redirect_to :root
+  end
+
 end

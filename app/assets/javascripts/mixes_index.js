@@ -14,10 +14,10 @@ $(document).ready(function(){
     $("#upload-status").hide();
   });
 
-  // Show and hide delete mix links
-  $(".delete-mix").hide();
-  $("#delete-mix-heading").click(function() {
-    $(".delete-mix").toggle();
+  // Show and hide edit mix links
+  $(".edit-mix").hide();
+  $("#edit-mix-heading").click(function() {
+    $(".edit-mix").toggle();
     if ($(this).hasClass("editing")) {
       $(this).text("Edit");
     } else {
