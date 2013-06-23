@@ -26,4 +26,10 @@ th#admin-heading {
 }
 th#delete-heading {
   width: 41px;
+  color: #08c;
+}
+th#delete-heading:hover {
+  text-decoration: underline;
+  color: #005580;
+  cursor: pointer;
 }

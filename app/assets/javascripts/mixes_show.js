@@ -1,19 +1,5 @@
 $(document).ready(function(){
 
-  // Display file to be uploaded
-  $("#mix_audio").change(function() {
-    var filename = $(this).val().split("\\");
-    $("#upload-filename").text(filename[filename.length - 1]);
-  });
-
-  // Show and hide upload status
-  $("#new_mix").submit(function() {
-    $("#upload-status").show();
-  });
-  $('#new-mix-modal').on("hidden", function() {
-    $("#upload-status").hide();
-  });
-
   // Instantiate jPlayer
   $("#jquery_jplayer_1").jPlayer({
     ready: function () {
@@ -42,13 +28,12 @@ $(document).ready(function(){
   $(".comment-row").click(function() {
     if ($(this).hasClass("expanded")) {
       $(this).nextUntil(".comment-row").hide();
-      $(this).removeClass("expanded");
     } else {
       $(".expanded").nextUntil(".comment-row").hide();
       $(".expanded").removeClass("expanded");
       $(this).nextUntil(".comment-row").show("fast");
-      $(this).addClass("expanded");
     };
+    $(this).toggleClass("expanded");
   });
 
 });
