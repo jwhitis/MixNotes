@@ -26,11 +26,12 @@
         <%= f.label :audio, "File", :class => "control-label" %>
         <div id="upload-box" class="controls">
           <%= f.file_field :audio %>
-          <div id="upload-button" class="btn btn-small btn-inverse">Choose a file</div>
-          <span id="upload-text"></span>
+          <div id="upload-button" class="btn btn-small btn-inverse">Choose File</div>
+          <span id="upload-filename"></span>
         </div>
       </div>
       <%= f.hidden_field :admin, :value => current_user.email %>
+      <p id="upload-status" class="text-info">This could take a few moments.</p>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

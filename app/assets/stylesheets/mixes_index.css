@@ -5,12 +5,17 @@ div#upload-box {
   position: relative;
 }
 input#mix_audio {
+  width: 83px;
   position: absolute;
   z-index: 9999;
   opacity: 0;
 }
-span#upload-text {
+span#upload-filename {
   padding-left: 5px;
+}
+p#upload-status {
+  text-align: center;
+  display: none;
 }
 th#comments-heading, th#users-heading, td.comments, td.users {
   width: 74px;
