@@ -40,7 +40,15 @@ $(document).ready(function(){
   // Show and hide replies
   $(".reply-row").hide();
   $(".comment-row").click(function() {
-    $(this).nextUntil(".comment-row").toggle("fast");
+    if ($(this).hasClass("expanded")) {
+      $(this).nextUntil(".comment-row").hide();
+      $(this).removeClass("expanded");
+    } else {
+      $(".expanded").nextUntil(".comment-row").hide();
+      $(".expanded").removeClass("expanded");
+      $(this).nextUntil(".comment-row").show("fast");
+      $(this).addClass("expanded");
+    };
   });
 
 });
