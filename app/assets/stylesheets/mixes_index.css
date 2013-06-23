@@ -24,11 +24,11 @@ th#comments-heading, th#users-heading, td.comments, td.users {
 th#admin-heading {
   width: 159px;
 }
-th#delete-heading {
+th#delete-mix-heading {
   width: 41px;
   color: #08c;
 }
-th#delete-heading:hover {
+th#delete-mix-heading:hover {
   text-decoration: underline;
   color: #005580;
   cursor: pointer;

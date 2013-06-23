@@ -36,4 +36,16 @@ $(document).ready(function(){
     $(this).toggleClass("expanded");
   });
 
+  // Show and hide delete comment links
+  $(".delete-comment").hide();
+  $("#delete-comment-heading").click(function() {
+    $(".delete-comment").toggle();
+    if ($(this).hasClass("editing")) {
+      $(this).text("Edit");
+    } else {
+      $(this).text("Done");
+    };
+    $(this).toggleClass("editing");
+  });
+
 });

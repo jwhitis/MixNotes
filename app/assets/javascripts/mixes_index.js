@@ -14,9 +14,9 @@ $(document).ready(function(){
     $("#upload-status").hide();
   });
 
-  // Show and hide delete links
+  // Show and hide delete mix links
   $(".delete-mix").hide();
-  $("#delete-heading").click(function() {
+  $("#delete-mix-heading").click(function() {
     $(".delete-mix").toggle();
     if ($(this).hasClass("editing")) {
       $(this).text("Edit");

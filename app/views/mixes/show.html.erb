@@ -95,6 +95,7 @@
       <th>Comment</th>
       <th id="replies-heading">Replies</th>
       <th id="user-heading">User</th>
+      <th id="delete-comment-heading">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -106,16 +107,22 @@
         <td><%= comment.content %></td>
         <td class="replies"><%= comment.replies.count %></td>
         <td><%= comment.user.email %></td>
+        <td>
+          <% if current_user == comment.user %>
+            <%= link_to "Delete", [@mix, comment], :method => :delete, :confirm => "Are you sure you want to delete this comment?", :class => "delete-comment" %>
+          <% end %>
+        </td>
       </tr>
       <% comment.replies.each do |reply| %>
         <tr class="reply-row">
           <td class="arrow">---></td>
           <td colspan="2"><%= reply.content %></td>
           <td><%= reply.user.email %></td>
+          <td></td>
         </tr>
       <% end %>
       <tr class="reply-row">
-        <td colspan="4">
+        <td colspan="5">
           <%= form_for [@mix, comment, @reply], :html => {:class => "form-inline"} do |f| %>
             <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
             <%= f.hidden_field :user_id, :value => current_user.id %>

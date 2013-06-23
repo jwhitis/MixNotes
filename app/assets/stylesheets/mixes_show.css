@@ -32,6 +32,15 @@ th#replies-heading, td.replies {
 th#user-heading {
   width: 159px;
 }
+th#delete-comment-heading {
+  width: 41px;
+  color: #08c;
+}
+th#delete-comment-heading:hover {
+  text-decoration: underline;
+  color: #005580;
+  cursor: pointer;
+}
 td.time {
   text-align: right;
   color: #08c;
@@ -43,9 +52,9 @@ td.time:hover {
 }
 input#reply_content {
   margin-left: 60px;
-  width: 521px;
+  width: 557px;
 }
 input#comment_content {
   margin-left: 68px;
-  width: 521px;
+  width: 557px;
 }

@@ -6,4 +6,10 @@ class CommentsController < ApplicationController
     redirect_to mix_path(params[:mix_id])
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to mix_path(params[:mix_id])
+  end
+
 end

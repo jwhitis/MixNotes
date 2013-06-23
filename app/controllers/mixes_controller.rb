@@ -22,8 +22,8 @@ class MixesController < ApplicationController
   end
 
   def destroy
-    @mix = Mix.find(params[:id])
-    @mix.destroy
+    mix = Mix.find(params[:id])
+    mix.destroy
     redirect_to :root
   end
 
