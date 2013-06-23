@@ -118,7 +118,11 @@
           <td class="arrow">---></td>
           <td colspan="2"><%= reply.content %></td>
           <td><%= reply.user.email %></td>
-          <td></td>
+          <td>
+            <% if current_user == reply.user %>
+              <%= link_to "Delete", [@mix, comment, reply], :method => :delete, :confirm => "Are you sure you want to delete this comment?", :class => "delete-comment" %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
       <tr class="reply-row">

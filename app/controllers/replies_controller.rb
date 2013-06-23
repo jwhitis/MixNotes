@@ -6,4 +6,10 @@ class RepliesController < ApplicationController
     redirect_to mix_path(params[:mix_id])
   end
 
+  def destroy
+    reply = Reply.find(params[:id])
+    reply.destroy
+    redirect_to mix_path(params[:mix_id])
+  end
+
 end
