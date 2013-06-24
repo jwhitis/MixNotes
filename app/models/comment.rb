@@ -3,6 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :mix
   belongs_to :user
   has_many :replies, :dependent => :destroy
+  include Formattable
 
   def convert_time
     min = (time / 60).floor

@@ -4,6 +4,7 @@ class Mix < ActiveRecord::Base
   has_many :users, :through => :permissions
   has_many :comments, :dependent => :destroy
   mount_uploader :audio, AudioUploader
+  include Formattable
 
   def total_comments
     total_comments = self.comments.count

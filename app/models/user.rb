@@ -12,6 +12,14 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :replies
 
+  MODELS = [:mixes, :permissions, :comments, :replies]
+
+  def associated_models
+    models = []
+    MODELS.each { |model| models.concat self.send(model) }
+    models.sort! { |a, b| b.created_at <=> a.created_at }
+  end
+
   def self.find_by_email email
     where(:email => email).first
   end

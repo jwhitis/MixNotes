@@ -1,6 +1,7 @@
 MixNotes::Application.routes.draw do
   root :to => "mixes#index"
   devise_for :users
+  resource :user, :only => :show
   resources :mixes, :only => [:index, :create, :show, :destroy] do
     resources :comments, :only => [:create, :destroy] do
       resources :replies, :only => [:create, :destroy]

@@ -1,0 +1,38 @@
+<div class="span2">
+
+<%= link_to "Back to homepage", :root %>
+
+</div>
+<div class="span8">
+
+<!-- Activity Table -->
+<table id="activity-table" class="table">
+  <thead>
+    <tr>
+      <th id="date-heading">Date</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @models.each do |model| %>
+      <tr>
+        <td class="date"><%= model.format_timestamp %></td>
+        <% if model.is_a?(Mix) %>
+          <td>Uploaded <%= link_to "\"#{model.title}\"", model %></td>
+        <% elsif model.is_a?(Permission) %>
+          <td>Joined <%= link_to "\"#{model.mix.title}\"", model.mix %></td>
+        <% elsif model.is_a?(Comment) %>
+          <td>Posted "<%= model.content %>" in
+            <%= link_to "\"#{model.mix.title}\"", model.mix %>
+          </td>
+        <% elsif model.is_a?(Reply) %>
+          <td>Posted "<%= model.content %>" in
+            <%= link_to "\"#{model.comment.mix.title}\"", model.comment.mix %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
