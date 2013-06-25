@@ -1,5 +1,5 @@
-Given(/^the user "(.*?)" has the following mixes:$/) do |email, mixes_table|
-  user = User.create(:email => email, :password => "password1")
+Given(/^user "(.*?)" has the following mixes:$/) do |email, mixes_table|
+  user = User.where(:email => email).first
   user.mixes.create(mixes_table.hashes)
 end
 
