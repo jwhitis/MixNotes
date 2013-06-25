@@ -8,7 +8,7 @@ Feature: Users posts comment
     And I have the following mixes:
       | title  | artist          | admin          |
       | Oxygen | The Impossibles | me@example.com |
-    And mix "Oxygen" has the following comments:
+    And I posted the following comments in mix "Oxygen":
       | time | content        |
       | 0    | ATX represent! |
     When I view mix "Oxygen"
@@ -21,7 +21,7 @@ Feature: Users posts comment
     And I have the following mixes:
       | title            | artist    | admin          |
       | Paranoid Android | Radiohead | me@example.com |
-    And mix "Paranoid Android" has the following comments:
+    And I posted the following comments in mix "Paranoid Android":
       | time | content      |
       | 60   | Guitar solo! |
     When I view mix "Paranoid Android"

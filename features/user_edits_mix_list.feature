@@ -14,7 +14,7 @@ Feature: User edits mix list
     And I should not see "Stevie Wonder"
 
   Scenario: User leaves a mix
-    Given the user "bob@example.com" with password "password1"
+    Given user "bob@example.com" with password "password1"
     And user "bob@example.com" has the following mixes:
       | title           | artist        | admin           |
       | Go Your Own Way | Fleetwood Mac | bob@example.com |

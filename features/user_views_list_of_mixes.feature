@@ -17,7 +17,7 @@ Feature: User views list of mixes
     And I should see "me@example.com"
 
   Scenario: Several users have several mixes
-    Given the user "bob@example.com" with password "password1"
+    Given user "bob@example.com" with password "password1"
     And user "bob@example.com" has the following mixes:
       | title    | artist         | admin           |
       | Debaser  | The Pixies     | bob@example.com |

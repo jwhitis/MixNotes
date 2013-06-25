@@ -8,7 +8,7 @@ Feature: Users posts reply
     And I have the following mixes:
       | title           | artist   | admin          |
       | Blue and Yellow | The Used | me@example.com |
-    And mix "Blue and Yellow" has the following comments:
+    And I posted the following comments in mix "Blue and Yellow":
       | time | content            |
       | 0    | Great drum groove! |
     When I view mix "Blue and Yellow"

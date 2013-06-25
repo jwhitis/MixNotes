@@ -4,7 +4,7 @@ Feature: Admin adds user to mix
   I want to add another user to a mix
 
   Scenario: Admin adds a registered user to a mix
-    Given the user "bob@example.com" with password "password1"
+    Given user "bob@example.com" with password "password1"
     And I am signed in
     And I have the following mixes:
       | title             | artist  | admin          |

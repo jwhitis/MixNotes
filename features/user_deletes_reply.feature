@@ -8,7 +8,7 @@ Feature: User deletes reply
     And I have the following mixes:
       | title       | artist | admin          |
       | Buddy Holly | Weezer | me@example.com |
-    And mix "Buddy Holly" has the following comments:
+    And I posted the following comments in mix "Buddy Holly":
       | time | content            |
       | 0    | Sweet music video! |
     And comment "Sweet music video!" has the following replies:

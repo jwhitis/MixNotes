@@ -1,4 +1,4 @@
-Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
+Given(/^user "(.*?)" with password "(.*?)"$/) do |email, password|
   user = User.create(email: email, password: password)
   refute user.new_record?
 end
