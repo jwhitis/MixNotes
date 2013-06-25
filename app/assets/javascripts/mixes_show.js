@@ -1,10 +1,14 @@
-$(document).ready(function(){
+$(document).ready(function() {
+
+  // Set media URL
+  var userMedia = $("#jquery_jplayer_1").attr("data-url");
+  var url = userMedia ? userMedia : "https://s3.amazonaws.com/mixnotes/mixnotes_default.mp3";
 
   // Instantiate jPlayer
   $("#jquery_jplayer_1").jPlayer({
     ready: function () {
       $(this).jPlayer("setMedia", {
-        mp3: $(this).attr("data-url")
+        mp3: url
       });
     },
     swfPath: "../../../vendor/assets",
@@ -17,7 +21,7 @@ $(document).ready(function(){
     }
   });
 
-  // Display comment time
+  // Start player at comment time
   $(".time").on("click", function() {
     var time = Number($(this).attr("data-time"));
     $("#jquery_jplayer_1").jPlayer("play", time);
