@@ -6,10 +6,10 @@ Feature: User views mix
   Scenario: User chooses a mix from a list
     Given I am signed in
     And I have the following mixes:
-      | title          | artist       |
-      | My Way         | Butch Walker |
-      | Savory         | Jawbox       |
-      | American Heart | Piebald      |
+      | title          | artist       | admin          |
+      | My Way         | Butch Walker | me@example.com |
+      | Savory         | Jawbox       | me@example.com |
+      | American Heart | Piebald      | me@example.com |
     When I go to the homepage
     And I click "My Way"
     Then I should see "My Way"

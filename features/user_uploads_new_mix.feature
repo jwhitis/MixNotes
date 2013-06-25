@@ -10,5 +10,7 @@ Feature: User uploads new mix
     And I fill in "Title" with "Full Disclosure"
     And I fill in "Artist" with "Fugazi"
     And I press "Submit"
-    And I should see "Full Disclosure"
+    Then I should see "Full Disclosure"
     And I should see "Fugazi"
+    When I view mix "Full Disclosure"
+    Then I should be listed as the admin

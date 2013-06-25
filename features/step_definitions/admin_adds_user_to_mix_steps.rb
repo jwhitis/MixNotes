@@ -1,5 +1,9 @@
-Given(/^I add user "(.*?)" to mix "(.*?)"$/) do |email, title|
-  user = User.where(:email => email).first
-  mix = Mix.where(:title => title).first
-  mix.permissions.create(:user_id => user.id) unless user.nil?
+Then(/^"(.*?)" should be listed as a user$/) do |email|
+  user_list = find("#user-list").text
+  user_list.should have_content(email)
+end
+
+Then(/^"(.*?)" should not be listed as a user$/) do |email|
+  user_list = find("#user-list").text
+  user_list.should_not have_content(email)
 end

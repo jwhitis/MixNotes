@@ -7,17 +7,23 @@ Feature: Admin adds user to mix
     Given the user "bob@example.com" with password "password1"
     And I am signed in
     And I have the following mixes:
-      | title             | artist  |
-      | The Deadly Rhythm | Refused |
-    And I add user "bob@example.com" to mix "The Deadly Rhythm"
+      | title             | artist  | admin          |
+      | The Deadly Rhythm | Refused | me@example.com |
     When I view mix "The Deadly Rhythm"
-    Then I should see "bob@example.com"
+    And I click "Add a user"
+    And I fill in "Email" with "bob@example.com"
+    And I click element "#new_permission input[type="submit"]"
+    Then I should see "bob@example.com has been successfully added to this mix."
+    And "bob@example.com" should be listed as a user
 
   Scenario: Admin tries to add an unregistered user
     Given I am signed in
     And I have the following mixes:
-      | title      | artist          |
-      | The Remedy | Abandoned Pools |
-    And I add user "bob@example.com" to mix "The Remedy"
+      | title      | artist          | admin          |
+      | The Remedy | Abandoned Pools | me@example.com |
     When I view mix "The Remedy"
-    Then I should not see "bob@example.com"
+    And I click "Add a user"
+    And I fill in "Email" with "bob@example.com"
+    And I click element "#new_permission input[type="submit"]"
+    Then I should see "bob@example.com is not a registered user."
+    And "bob@example.com" should not be listed as a user

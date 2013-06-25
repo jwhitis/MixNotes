@@ -6,8 +6,8 @@ Feature: User deletes reply
   Scenario: User deletes a reply
     Given I am signed in
     And I have the following mixes:
-      | title       | artist |
-      | Buddy Holly | Weezer |
+      | title       | artist | admin          |
+      | Buddy Holly | Weezer | me@example.com |
     And mix "Buddy Holly" has the following comments:
       | time | content            |
       | 0    | Sweet music video! |

@@ -6,8 +6,8 @@ Feature: Users posts reply
   Scenario: User posts a reply to a comment
     Given I am signed in
     And I have the following mixes:
-      | title           | artist   |
-      | Blue and Yellow | The Used |
+      | title           | artist   | admin          |
+      | Blue and Yellow | The Used | me@example.com |
     And mix "Blue and Yellow" has the following comments:
       | time | content            |
       | 0    | Great drum groove! |
