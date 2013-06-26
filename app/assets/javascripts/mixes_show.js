@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   // Set media URL
   var userMedia = $("#jquery_jplayer_1").attr("data-url");
-  var url = userMedia ? userMedia : "https://s3.amazonaws.com/mixnotes/mixnotes_default.mp3";
+  var url = userMedia ? userMedia : "https://s3.amazonaws.com/mixnotes-production/mixnotes_default.mp3";
 
   // Instantiate jPlayer
   $("#jquery_jplayer_1").jPlayer({
