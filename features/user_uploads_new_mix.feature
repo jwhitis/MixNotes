@@ -6,7 +6,7 @@ Feature: User uploads new mix
   Scenario: User enters title and artist but no file
     Given I am signed in
     When I go to the homepage
-    And I click "Upload a mix"
+    And I click "Upload Mix"
     And I fill in "Title" with "Full Disclosure"
     And I fill in "Artist" with "Fugazi"
     And I press "Submit"

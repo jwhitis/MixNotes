@@ -1,50 +1,11 @@
 <div class="span2">
 
-<%= link_to "View recent activity", user_path %>
-<a href="#new-mix-modal" data-toggle="modal">Upload a mix</a>
-
-<!-- New Mix Modal -->
-<div id="new-mix-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="new-mix-modal-label" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3 id="new-mix-modal-label">Upload a mix</h3>
-  </div>
-  <%= form_for @mix, :html => {:class => "form-horizontal"} do |f| %>
-    <div class="modal-body">
-      <div class="control-group">
-        <%= f.label :title, :class => "control-label" %>
-        <div class="controls">
-          <%= f.text_field :title, :placeholder => "Title" %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :artist, :class => "control-label" %>
-        <div class="controls">
-          <%= f.text_field :artist, :placeholder => "Artist" %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :audio, "File", :class => "control-label" %>
-        <div id="upload-box" class="controls">
-          <%= f.file_field :audio %>
-          <div id="upload-button" class="btn btn-small btn-inverse">Choose File</div>
-          <span id="upload-filename"></span>
-        </div>
-      </div>
-      <%= f.hidden_field :admin, :value => current_user.email %>
-      <p id="upload-status" class="text-info">This could take a few moments.</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-      <%= f.submit "Submit", :class => "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
+<a class="btn" data-toggle="modal" href="#new-mix-modal">Upload Mix</a>
+<%= render "mix_modal" %>
 
 </div>
 <div class="span8">
 
-<!-- Mixes Table -->
 <table id="mixes-table" class="table">
   <thead>
     <tr>

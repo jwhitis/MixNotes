@@ -1,3 +1,10 @@
+a[href="#new-mix-modal"] {
+  float: right;
+  color: #6F2A8E;
+}
+a[href="#new-mix-modal"]:hover {
+  color: #4f1e66;
+}
 form#new_mix {
   margin-bottom: 0;
 }
@@ -26,10 +33,10 @@ th#admin-heading {
 }
 th#edit-mix-heading {
   width: 41px;
-  color: #08c;
+  color: #6F2A8E;
 }
 th#edit-mix-heading:hover {
   text-decoration: underline;
-  color: #005580;
+  color: #5b2375;
   cursor: pointer;
 }
