@@ -1,0 +1,21 @@
+<div id="add-user-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="add-user-modal-label" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="add-user-modal-label">Add a user</h3>
+  </div>
+  <%= form_for @permission, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="modal-body">
+      <div class="control-group">
+        <%= label_tag :email, "Email", :class => "control-label" %>
+        <div class="controls">
+          <%= text_field_tag :email, nil, :placeholder => "Email" %>
+        </div>
+      </div>
+      <%= f.hidden_field :mix_id, :value => @mix.id %>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
