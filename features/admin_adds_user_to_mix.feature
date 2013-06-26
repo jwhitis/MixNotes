@@ -10,7 +10,7 @@ Feature: Admin adds user to mix
       | title             | artist  | admin          |
       | The Deadly Rhythm | Refused | me@example.com |
     When I view mix "The Deadly Rhythm"
-    And I click "Add a user"
+    And I click "Add User"
     And I fill in "Email" with "bob@example.com"
     And I click element "#new_permission input[type="submit"]"
     Then I should see "bob@example.com has been successfully added to this mix."
@@ -22,7 +22,7 @@ Feature: Admin adds user to mix
       | title      | artist          | admin          |
       | The Remedy | Abandoned Pools | me@example.com |
     When I view mix "The Remedy"
-    And I click "Add a user"
+    And I click "Add User"
     And I fill in "Email" with "bob@example.com"
     And I click element "#new_permission input[type="submit"]"
     Then I should see "bob@example.com is not a registered user."

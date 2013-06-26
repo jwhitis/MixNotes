@@ -1,8 +1,8 @@
 <div class="span2">
 
-<p><strong>Admin:</strong></p>
+<p class="permissions-heading">Admin:</p>
 <p id="admin"><%= @mix.admin %></p>
-<p><strong>Users:</strong></p>
+<p class="permissions-heading">Users:</p>
 <ul id="user-list">
   <% @mix.users.each do |user| %>
     <% unless user.email == @mix.admin %>
@@ -12,7 +12,7 @@
 </ul>
 
 <% if current_user.email == @mix.admin %>
-  <a href="#add-user-modal" data-toggle="modal">Add a user</a>
+  <a class="btn btn-mixnote" href="#add-user-modal" data-toggle="modal">Add User</a>
   <%= render "add_user_modal" %>
 <% end %>
 
@@ -67,7 +67,7 @@
           <%= form_for [@mix, comment, @reply], :html => {:class => "form-inline"} do |f| %>
             <%= f.text_field :content, :placeholder => "Reply to a comment..." %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.submit "Submit", :class => "btn btn-primary" %>
+            <%= f.submit "Submit", :class => "btn btn-mixnote" %>
           <% end %>
         </td>
       </tr>
@@ -79,7 +79,7 @@
   <%= f.hidden_field :time %>
   <%= f.text_field :content, :placeholder => "Add a comment..." %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <%= f.submit "Submit", :class => "btn btn-mixnote" %>
 <% end %>
 
 </div>

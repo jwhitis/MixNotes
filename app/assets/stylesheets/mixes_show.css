@@ -1,18 +1,18 @@
+p.permissions-heading {
+  font-size: 16px;
+  font-weight: bold;
+}
 p#admin {
   margin-left: 25px;
 }
 ul#user-list {
   list-style-type: none;
 }
+h3#add-user-modal-label {
+  color: #6f2a8e;
+}
 div#add-user-modal > form, form#new_reply {
   margin-bottom: 0;
-}
-div#jp_container_1 {
-  width: 100%;
-}
-div.jp-gui {
-  width: 420px;
-  margin: 0 auto;
 }
 p#instructions {
   margin-top: 10px;
@@ -34,20 +34,20 @@ th#user-heading {
 }
 th#delete-comment-heading {
   width: 41px;
-  color: #08c;
+  color: #6f2a8e;
 }
 th#delete-comment-heading:hover {
   text-decoration: underline;
-  color: #005580;
+  color: #4f1e66;
   cursor: pointer;
 }
 td.time {
   text-align: right;
-  color: #08c;
+  color: #6f2a8e;
 }
 td.time:hover {
   text-decoration: underline;
-  color: #005580;
+  color: #4f1e66;
   cursor: pointer;
 }
 input#reply_content {

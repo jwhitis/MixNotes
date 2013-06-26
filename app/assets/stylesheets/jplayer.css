@@ -1,0 +1,26 @@
+div#jp_container_1 {
+  width: 100%;
+  border: 2px solid #686868;
+  border-radius: 23px;
+  background: #cccccc; /* Old browsers */
+  background: -moz-linear-gradient(left,  #cccccc 0%, #eeeeee 22%, #eeeeee 78%, #cccccc 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#cccccc), color-stop(22%,#eeeeee), color-stop(78%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #cccccc 0%,#eeeeee 22%,#eeeeee 78%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #cccccc 0%,#eeeeee 22%,#eeeeee 78%,#cccccc 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #cccccc 0%,#eeeeee 22%,#eeeeee 78%,#cccccc 100%); /* IE10+ */
+  background: linear-gradient(to right,  #cccccc 0%,#eeeeee 22%,#eeeeee 78%,#cccccc 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 */
+}
+div.jp-gui {
+  width: 420px;
+  margin: 0 auto;
+}
+div.jp-title {
+  border-radius: 0 0 20px 20px;
+  background-color: #4f1e66;
+}
+div.jp-title li {
+  font-size: 16px;
+  font-weight: normal;
+  color: #e5e5e5;
+}

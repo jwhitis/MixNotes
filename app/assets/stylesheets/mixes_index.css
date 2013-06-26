@@ -1,9 +1,8 @@
 a[href="#new-mix-modal"] {
   float: right;
-  color: #6F2A8E;
 }
-a[href="#new-mix-modal"]:hover {
-  color: #4f1e66;
+h3#new-mix-modal-label {
+  color: #6f2a8e;
 }
 form#new_mix {
   margin-bottom: 0;
