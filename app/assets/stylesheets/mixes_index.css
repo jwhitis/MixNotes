@@ -5,6 +5,14 @@ form#new_mix label {
   font-size: 16px;
   font-weight: bold;
 }
+div#artist-control-group {
+  margin-bottom: 0;
+}
+small#upload-format {
+  margin: 5px 0;
+  display: block;
+  text-align: center;
+}
 div#upload-box {
   position: relative;
 }

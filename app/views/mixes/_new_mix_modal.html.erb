@@ -11,12 +11,13 @@
           <%= f.text_field :title, :placeholder => "Title" %>
         </div>
       </div>
-      <div class="control-group">
+      <div id="artist-control-group" class="control-group">
         <%= f.label :artist, :class => "control-label" %>
         <div class="controls">
           <%= f.text_field :artist, :placeholder => "Artist" %>
         </div>
       </div>
+      <small id="upload-format" class="muted">MixNotes currently supports the MP3 audio format.</small>
       <div class="control-group">
         <%= f.label :audio, "File", :class => "control-label" %>
         <div id="upload-box" class="controls">
