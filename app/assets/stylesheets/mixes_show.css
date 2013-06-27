@@ -8,15 +8,17 @@ p#admin {
 ul#user-list {
   list-style-type: none;
 }
-h3#add-user-modal-label {
-  color: #6f2a8e;
-}
-div#add-user-modal > form, form#new_reply {
+form#new_permission, form#new_reply {
   margin-bottom: 0;
+}
+form#new_permission label {
+  font-size: 16px;
+  font-weight: bold;
 }
 p#instructions {
   margin-top: 10px;
   text-align: center;
+  font-style: italic;
 }
 table#comments-table {
   margin: 0;
@@ -32,11 +34,11 @@ th#replies-heading, td.replies {
 th#user-heading {
   width: 159px;
 }
-th#delete-comment-heading {
+th#edit-comment-heading {
   width: 41px;
   color: #6f2a8e;
 }
-th#delete-comment-heading:hover {
+th#edit-comment-heading:hover, td.time:hover {
   text-decoration: underline;
   color: #4f1e66;
   cursor: pointer;
@@ -44,11 +46,6 @@ th#delete-comment-heading:hover {
 td.time {
   text-align: right;
   color: #6f2a8e;
-}
-td.time:hover {
-  text-decoration: underline;
-  color: #4f1e66;
-  cursor: pointer;
 }
 input#reply_content {
   margin-left: 60px;

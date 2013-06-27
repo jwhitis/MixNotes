@@ -1,11 +1,9 @@
-a[href="#new-mix-modal"] {
-  float: right;
-}
-h3#new-mix-modal-label {
-  color: #6f2a8e;
-}
 form#new_mix {
   margin-bottom: 0;
+}
+form#new_mix label {
+  font-size: 16px;
+  font-weight: bold;
 }
 div#upload-box {
   position: relative;
@@ -32,7 +30,7 @@ th#admin-heading {
 }
 th#edit-mix-heading {
   width: 41px;
-  color: #6F2A8E;
+  color: #6f2a8e;
 }
 th#edit-mix-heading:hover {
   text-decoration: underline;

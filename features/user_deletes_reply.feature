@@ -15,5 +15,5 @@ Feature: User deletes reply
       | content     |
       | Happy Days! |
     When I view mix "Buddy Holly"
-    And I click element ".reply-row .delete-comment"
+    And I click element ".reply-row .edit-comment"
     Then I should not see "Happy Days!"

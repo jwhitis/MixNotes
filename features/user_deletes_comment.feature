@@ -27,7 +27,7 @@ Feature: User deletes comment
       | content                    |
       | Your parents must be mean. |
     When I view mix "Emotion"
-    And I click element ".comment-row .delete-comment"
+    And I click element ".comment-row .edit-comment"
     Then I should not see "That's my middle name, too!"
     And I should not see "Your parents must be mean."
 
@@ -42,5 +42,5 @@ Feature: User deletes comment
       | time | content                                    |
       | 0    | But I can't work in fast food all my life! |
     When I view mix "Sell Out"
-    And I click element ".comment-row .delete-comment"
+    And I click element ".comment-row .edit-comment"
     Then I should not see "But I can't work in fast food all my life!"

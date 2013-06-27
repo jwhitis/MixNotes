@@ -41,9 +41,9 @@ $(document).ready(function() {
   });
 
   // Show and hide delete comment links
-  $(".delete-comment").hide();
-  $("#delete-comment-heading").click(function() {
-    $(".delete-comment").toggle();
+  $(".edit-comment").hide();
+  $("#edit-comment-heading").click(function() {
+    $(".edit-comment").toggle();
     if ($(this).hasClass("editing")) {
       $(this).text("Edit");
     } else {

@@ -1,6 +1,6 @@
 <div class="span2">
 
-<a class="btn btn-mixnote" data-toggle="modal" href="#new-mix-modal">Upload Mix</a>
+<a class="btn btn-block btn-mixnote" data-toggle="modal" href="#new-mix-modal">Upload Mix</a>
 <%= render "new_mix_modal" %>
 
 </div>
@@ -19,20 +19,20 @@
   </thead>
   <tbody>
     <% @mixes.each do |mix| %>
-    <tr>
-      <td><%= link_to mix.title, mix %></td>
-      <td><%= mix.artist %></td>
-      <td class="comments"><%= mix.total_comments %></td>
-      <td class="users"><%= mix.users.count %></td>
-      <td><%= mix.admin %></td>
-      <td>
-        <% if current_user.email == mix.admin %>
-          <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure you want to delete this mix?", :class => "edit-mix" %>
-        <% else %>
-          <%= link_to "Leave", mix.permissions.find_by_user(current_user), :method => :delete, :confirm => "Are you sure you want to leave this mix?", :class => "edit-mix" %>
-        <% end %>
-      </td>
-    </tr>
+      <tr>
+        <td><%= link_to mix.title, mix %></td>
+        <td><%= mix.artist %></td>
+        <td class="comments"><%= mix.total_comments %></td>
+        <td class="users"><%= mix.users.count %></td>
+        <td><%= mix.admin %></td>
+        <td>
+          <% if current_user.email == mix.admin %>
+            <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure you want to delete this mix?", :class => "edit-mix" %>
+          <% else %>
+            <%= link_to "Leave", mix.permissions.find_by_user(current_user), :method => :delete, :confirm => "Are you sure you want to leave this mix?", :class => "edit-mix" %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
