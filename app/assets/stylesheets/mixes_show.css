@@ -31,7 +31,7 @@ th#replies-heading, td.replies {
  width: 51px;
  text-align: center;
 }
-th#user-heading {
+th#comments-user-heading {
   width: 159px;
 }
 th#edit-comment-heading {

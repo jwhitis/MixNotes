@@ -12,11 +12,17 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :replies
 
-  MODELS = [:mixes, :permissions, :comments, :replies]
-
   def associated_models
     models = []
-    MODELS.each { |model| models.concat self.send(model) }
+    self.mixes.each do |mix|
+      models.concat mix.permissions
+      models.concat mix.comments
+      mix.comments.each { |comment| models.concat comment.replies }
+    end
+    sort_by_created_at(models)
+  end
+
+  def sort_by_created_at models
     models.sort! { |a, b| b.created_at <=> a.created_at }
   end
 

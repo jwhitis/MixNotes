@@ -1,4 +1,10 @@
+table#activity-table {
+  margin-bottom: 40px;
+}
 th#date-heading, td.date {
   width: 68px;
   text-align: right;
+}
+th#activity-user-heading {
+  width: 159px;
 }

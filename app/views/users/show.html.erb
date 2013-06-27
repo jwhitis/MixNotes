@@ -1,20 +1,20 @@
 <div class="span8 offset2">
 
-<!-- Activity Table -->
 <table id="activity-table" class="table">
   <thead>
     <tr>
       <th id="date-heading">Date</th>
       <th>Activity</th>
+      <th id="activity-user-heading">User</th>
     </tr>
   </thead>
   <tbody>
     <% @models.each do |model| %>
       <tr>
         <td class="date"><%= model.format_timestamp %></td>
-        <% if model.is_a?(Mix) %>
-          <td>Uploaded <%= link_to "\"#{model.title}\"", model %></td>
-        <% elsif model.is_a?(Permission) %>
+        <% if model.is_a?(Permission) && model.user.email == model.mix.admin %>
+          <td>Uploaded <%= link_to "\"#{model.mix.title}\"", model.mix %></td>
+        <% elsif model.is_a?(Permission) && model.user.email != model.mix.admin %>
           <td>Joined <%= link_to "\"#{model.mix.title}\"", model.mix %></td>
         <% elsif model.is_a?(Comment) %>
           <td>Posted "<%= model.content %>" in
@@ -25,6 +25,7 @@
             <%= link_to "\"#{model.comment.mix.title}\"", model.comment.mix %>
           </td>
         <% end %>
+        <td><%= model.user.email %></td>
       </tr>
     <% end %>
   </tbody>
