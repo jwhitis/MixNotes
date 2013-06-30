@@ -32,6 +32,12 @@ header h1 {
 a#brand:hover {
   text-decoration: none;
 }
+span#beta {
+  margin-left: 3px;
+  font-size: 42px;
+  font-style: italic;
+  color: #686868;
+}
 ul.nav {
   margin-bottom: 0;
 }
