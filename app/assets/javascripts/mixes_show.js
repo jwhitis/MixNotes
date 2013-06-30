@@ -29,15 +29,16 @@ $(document).ready(function() {
 
   // Show and hide replies
   $(".reply-row").hide();
-  $(".comment-row").click(function() {
-    if ($(this).hasClass("expanded")) {
-      $(this).nextUntil(".comment-row").hide();
+  $(".content").click(function() {
+    var row = $(this).parent();
+    if (row.hasClass("expanded")) {
+      row.nextUntil(".comment-row").hide();
     } else {
       $(".expanded").nextUntil(".comment-row").hide();
       $(".expanded").removeClass("expanded");
-      $(this).nextUntil(".comment-row").show("fast");
+      row.nextUntil(".comment-row").show("fast");
     };
-    $(this).toggleClass("expanded");
+    row.toggleClass("expanded");
   });
 
   // Show and hide delete comment links

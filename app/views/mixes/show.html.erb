@@ -25,7 +25,7 @@
   Just pause the song at any point, and add a comment below.
 </p>
 
-<table id="comments-table" class="table table-hover">
+<table id="comments-table" class="table">
   <thead>
     <tr>
       <th id="time-heading">Time</th>
@@ -41,7 +41,7 @@
         <td class="time" data-time="<%= comment.time %>">
           <%= comment.convert_time %>
         </td>
-        <td><%= comment.content %></td>
+        <td class="content"><i class="icon-plus-sign"></i><%= comment.content %></td>
         <td class="replies"><%= comment.replies.count %></td>
         <td><%= comment.user.email %></td>
         <td>
