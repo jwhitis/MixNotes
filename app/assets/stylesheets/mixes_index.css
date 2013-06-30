@@ -29,6 +29,9 @@ p#upload-status {
   text-align: center;
   display: none;
 }
+table#mixes-table {
+  margin-bottom: 60px;
+}
 th#comments-heading, th#users-heading, td.comments, td.users {
   width: 74px;
   text-align: center;
