@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min
+//= require bootstrap
 //= require jquery.jplayer.min
 //= require_tree .
