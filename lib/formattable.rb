@@ -20,4 +20,8 @@ module Formattable
     timestamp.strftime("%D")
   end
 
+  def format_errors
+    self.errors.messages.values.join(" ")
+  end
+
 end

@@ -1,5 +1,8 @@
 class Mix < ActiveRecord::Base
   attr_accessible :title, :artist, :admin, :audio
+  validates_presence_of :title, :message => "Title can't be blank."
+  validates_presence_of :artist, :message => "Artist can't be blank."
+  # validates_presence_of :audio, :message => "Choose a valid audio file."
   has_many :permissions, :dependent => :destroy
   has_many :users, :through => :permissions
   has_many :comments, :dependent => :destroy

@@ -10,8 +10,17 @@ class MixesController < ApplicationController
   end
 
   def create
-    current_user.mixes.create(params[:mix])
+    mix = current_user.mixes.build(params[:mix])
+    attempt_to_save(mix)
     redirect_to :root
+  end
+
+  def attempt_to_save mix
+    if current_user.save
+      flash[:notice] = "\"#{mix.title}\" has been successfully uploaded."
+    else
+      flash[:alert] = mix.format_errors
+    end
   end
 
   def show

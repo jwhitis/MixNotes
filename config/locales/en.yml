@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  errors:
+    messages:
+      extension_white_list_error: "%{extension} files are not allowed."
