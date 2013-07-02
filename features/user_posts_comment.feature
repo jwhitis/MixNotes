@@ -28,3 +28,12 @@ Feature: Users posts comment
     Then I should see "1:00"
     And I should see "Guitar solo!"
     And I should see "me@example.com"
+
+  Scenario: User tries to post an empty comment
+    Given I am signed in
+    And I have the following mixes:
+      | title      | artist         | admin          |
+      | Evaporated | Ben Folds Five | me@example.com |
+    When I view mix "Evaporated"
+    And I click element "#new_comment input[type="submit"]"
+    Then I should see "Please type your comment in the text box."
