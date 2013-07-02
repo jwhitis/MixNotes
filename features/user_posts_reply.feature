@@ -16,3 +16,15 @@ Feature: Users posts reply
     And I click element "#new_reply > input[type="submit"]"
     And I should see "Totally!"
     And I should see "me@example.com"
+
+  Scenario: User tries to post an empty reply
+    Given I am signed in
+    And I have the following mixes:
+      | title         | artist    | admin          |
+      | Ace of Spades | Motorhead | me@example.com |
+    And I posted the following comments in mix "Ace of Spades":
+      | time | content                 |
+      | 0    | Check out Lemmy's mole! |
+    When I view mix "Ace of Spades"
+    And I click element "#new_reply input[type="submit"]"
+    Then I should see "Please type your reply in the text box."
