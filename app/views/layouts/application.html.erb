@@ -18,9 +18,15 @@
       <nav>
         <ul class="nav">
           <li><%= link_to "Mixes", :root %></li>
-          <li><%= link_to "Activity", user_path %></li>
+          <li>
+            <%= link_to user_path do %>
+              Activity
+              <span id="count" class="badge"><%= current_user.notifications.count %></span>
+            <% end %>
+          </li>
           <li class="pull-right">
-            <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :id => "sign-out" %>
+            <%= link_to "Sign Out", destroy_user_session_path,
+              :method => :delete, :id => "sign-out" %>
           </li>
           <li id="username" class="pull-right"><%= current_user.email %></li>
         </ul>

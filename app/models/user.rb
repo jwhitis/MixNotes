@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :mixes, :through => :permissions
   has_many :comments
   has_many :replies
+  has_many :notifications
 
   def associated_models
     models = []

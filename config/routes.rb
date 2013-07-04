@@ -1,6 +1,6 @@
 MixNotes::Application.routes.draw do
   root :to => "mixes#index"
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions"}
   resource :user, :only => :show
   resources :mixes, :only => [:index, :create, :show, :destroy] do
     resources :comments, :only => [:create, :destroy] do
@@ -8,6 +8,7 @@ MixNotes::Application.routes.draw do
     end
   end
   resources :permissions, :only => [:create, :destroy]
+  resources :notifications, :only => :destroy
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

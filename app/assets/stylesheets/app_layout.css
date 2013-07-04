@@ -54,6 +54,12 @@ ul.nav a:hover {
   background-color: #454545;
   color: #fff;
 }
+span#count {
+  vertical-align: middle;
+  background-color: #a6ffa0;
+  color: #333;
+  text-shadow: 0 -1px rgba(255, 255, 255, 0.25);
+}
 li#username {
   padding: 10px;
   color: #686868;
