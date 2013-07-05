@@ -10,7 +10,8 @@
   </thead>
   <tbody>
     <% @models.each do |model|
-      id = Notification.find_id_by_model(model) %>
+      notification = Notification.find_by_model_and_user(model, current_user)
+      id = notification.nil? ? nil : notification.id %>
       <tr <%= "data-id=#{id}" unless id.nil? %>>
         <td class="date"><%= model.format_timestamp %></td>
         <% if model.is_a?(Permission) && model.user.email == model.mix.admin %>

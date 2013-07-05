@@ -7,10 +7,16 @@ class SessionsController < Devise::SessionsController
 
   def save_notifications
     models = current_user.associated_models
-    models.select! { |model| model.created_at > current_user.last_sign_in_at }
+    models.select! { |model| model.created_at > current_user.last_sign_out_at }
     models.each do |model|
-      current_user.notifications.create(:model_class => model.class, :model_id => model.id)
+      current_user.notifications.create(:model_class => model.class.to_s, :model_id => model.id)
     end
+  end
+
+  def destroy
+    current_user.last_sign_out_at = DateTime.now
+    current_user.save
+    super
   end
 
 end
