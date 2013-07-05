@@ -23,7 +23,7 @@ Feature: User deletes comment
     And I posted the following comments in mix "Emotion":
       | time | content                     |
       | 0    | That's my middle name, too! |
-    And comment "That's my middle name, too!" has the following replies:
+    And I posted the following replies to comment "That's my middle name, too!":
       | content                    |
       | Your parents must be mean. |
     When I view mix "Emotion"
