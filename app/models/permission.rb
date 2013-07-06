@@ -6,8 +6,8 @@ class Permission < ActiveRecord::Base
   belongs_to :user
   include Formattable
 
-  def self.find_by_user user
-    where(:user_id => user.id).first
+  def self.find_by_mix_and_user mix, user
+    where(:mix_id => mix.id, :user_id => user.id).first
   end
 
 end
