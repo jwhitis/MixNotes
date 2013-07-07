@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include Saveable
 
   def create
     mix = Mix.find(params[:mix_id])
@@ -6,13 +7,6 @@ class CommentsController < ApplicationController
     attempt_to_save(comment)
     redirect_to mix_path(params[:mix_id])
   end
-
-  def attempt_to_save comment
-    unless comment.save
-      flash[:alert] = comment.format_errors
-    end
-  end
-  private :attempt_to_save
 
   def destroy
     comment = Comment.find(params[:id])
