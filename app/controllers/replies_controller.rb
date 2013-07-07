@@ -12,6 +12,7 @@ class RepliesController < ApplicationController
       flash[:alert] = reply.format_errors
     end
   end
+  private :attempt_to_save
 
   def destroy
     reply = Reply.find(params[:id])

@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
       flash[:alert] = comment.format_errors
     end
   end
+  private :attempt_to_save
 
   def destroy
     comment = Comment.find(params[:id])

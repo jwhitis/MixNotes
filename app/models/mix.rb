@@ -9,6 +9,14 @@ class Mix < ActiveRecord::Base
   mount_uploader :audio, AudioUploader
   include Formattable
 
+  def associated_models
+    models = []
+    models.concat self.permissions
+    models.concat self.comments
+    self.comments.each { |comment| models.concat comment.replies }
+    models
+  end
+
   def total_comments
     total_comments = self.comments.count
     self.comments.each { |comment| total_comments += comment.replies.count }

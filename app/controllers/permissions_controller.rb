@@ -6,6 +6,7 @@ class PermissionsController < ApplicationController
     redirect_to mix_path(params[:permission][:mix_id])
   end
 
+  private
   def save_if_user_exists user, params
     if user.nil?
       flash[:alert] = "#{params[:email]} is not a registered user."
@@ -22,6 +23,7 @@ class PermissionsController < ApplicationController
       flash[:alert] = permission.format_errors
     end
   end
+  public
 
   def destroy
     permission = Permission.find(params[:id])
