@@ -1,16 +1,11 @@
 class RepliesController < ApplicationController
+  include Saveable
 
   def create
     comment = Comment.find(params[:comment_id])
     reply = comment.replies.build(params[:reply])
     attempt_to_save(reply)
     redirect_to mix_path(params[:mix_id])
-  end
-
-  def attempt_to_save reply
-    unless reply.save
-      flash[:alert] = reply.format_errors
-    end
   end
 
   def destroy

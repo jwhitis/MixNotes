@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   // Display file to be uploaded
   $("#mix_audio").change(function() {

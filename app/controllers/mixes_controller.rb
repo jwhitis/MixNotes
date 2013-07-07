@@ -22,6 +22,7 @@ class MixesController < ApplicationController
       flash[:alert] = mix.format_errors
     end
   end
+  private :attempt_to_save
 
   def show
     @mix = Mix.find(params[:id])

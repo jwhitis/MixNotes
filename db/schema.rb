@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620202214) do
+ActiveRecord::Schema.define(:version => 20130704165923) do
 
   create_table "comments", :force => true do |t|
     t.integer  "time"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20130620202214) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "audio"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "model_class"
+    t.integer  "model_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "permissions", :force => true do |t|
@@ -61,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130620202214) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.datetime "last_sign_out_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

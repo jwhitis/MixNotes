@@ -29,7 +29,7 @@
           <% if current_user.email == mix.admin %>
             <%= link_to "Delete", mix, :method => :delete, :confirm => "Are you sure you want to delete this mix?", :class => "edit-mix" %>
           <% else %>
-            <%= link_to "Leave", mix.permissions.find_by_user(current_user), :method => :delete, :confirm => "Are you sure you want to leave this mix?", :class => "edit-mix" %>
+            <%= link_to "Leave", Permission.find_by_mix_and_user(mix, current_user), :method => :delete, :confirm => "Are you sure you want to leave this mix?", :class => "edit-mix" %>
           <% end %>
         </td>
       </tr>
